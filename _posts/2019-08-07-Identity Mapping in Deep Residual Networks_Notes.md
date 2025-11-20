@@ -1,3 +1,9 @@
+---
+layout: post
+title: "Identity Mapping in Deep Residual Networks Notes"
+date: 2019-08-07
+tags: [Deep Learning, ResNet]
+---
 ## Identity Mapping in Deep Residual Networks
 
 ---
@@ -41,9 +47,9 @@ $$
 
 而且这也表现了在一个mini-batch中梯度更难为0，因为这要求这个batch中所有样本$\frac{\partial F(x_i,W_i)}{\partial{x_l}}$全部接近-1，而对于plain network，则是该项接近0，显然全部接近-1的可能性比全部接近0的可能性小。
 
-<font color="#FF0000">**模型退化问题的原因是优化问题，而不是表达能力的问题。**</font>
+<font color="#FF0000"><b>模型退化问题的原因是优化问题，而不是表达能力的问题。</b></font>
 
-##pre-activation好用的原因：
+## pre-activation好用的原因：
 
 1. pre_activation使得f变成上文所说的identity mapping，优化更简单
 2. 之前的resnet虽然使用了BN+ReLU，但是马上加上了shortcut传过来的identity，因此BN的作用到下一层时被减弱了，而pre_activation保证了输入总是被BN正则化的，overfitting的问题能够被解决。

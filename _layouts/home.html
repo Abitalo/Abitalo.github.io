@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<div class="home">
+
+    <div class="hero">
+        <h1>Welcome to Abitalo's Blog</h1>
+        <p>Exploring Deep Learning, AI, and the Cosmos of Code.</p>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search posts...">
+        </div>
+    </div>
+
+    <h2 class="page-heading">Latest Transmissions</h2>
+
+    <ul class="post-list">
+        {% for post in site.posts %}
+        <li>
+            <div class="post-card">
+                <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+                <h3>
+                    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+                </h3>
+                <div class="post-excerpt">
+                    {{ post.excerpt | strip_html | truncatewords: 20 }}
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+</div>

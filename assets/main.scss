@@ -1,0 +1,80 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+/* Tech Theme Overrides */
+:root {
+  --bg-color: #0a0e14;
+  --text-color: #c9d1d9;
+  --accent-color: #00f2ff;
+  --link-color: #58a6ff;
+  --code-bg: #161b22;
+  --header-font: "SF Mono", "Menlo", "Consolas", "Courier New", monospace;
+  --body-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--header-font);
+  color: var(--accent-color);
+  letter-spacing: -0.5px;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* Header */
+.site-header {
+  background-color: rgba(10, 14, 20, 0.95);
+  border-bottom: 1px solid #30363d;
+  border-top: 2px solid var(--accent-color);
+}
+
+.site-title {
+  font-family: var(--header-font);
+  color: var(--accent-color) !important;
+  font-weight: bold;
+}
+
+/* Posts */
+.post-content {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+pre, code {
+  font-family: var(--header-font);
+  background-color: var(--code-bg);
+  border: 1px solid #30363d;
+  border-radius: 4px;
+}
+
+.highlighter-rouge .highlight {
+  background-color: var(--code-bg);
+}
+
+/* MathJax */
+.mjx-chtml {
+  font-size: 110% !important;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid #30363d;
+  background-color: var(--bg-color);
+}
